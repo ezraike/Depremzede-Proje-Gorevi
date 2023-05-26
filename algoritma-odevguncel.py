@@ -1,6 +1,6 @@
 import tkinter as tk
 import time
-
+import pandas as pd
 e=int(input("Selamlar, Lütfen Adminseniz 1'i Normal Kullanıcıysanız 2'yi tuşlayın:\n"))
 
 if e==1:
@@ -11,7 +11,7 @@ if e==1:
         for i in liste1:
             manuel_depremzede=str(input("Lütfen Kayıt Olmayan bir depremzedenin adini girin:"))
             sozluk1={"Depremzede"[i]:manuel_depremzede}
-            dosya43=open("Manuel-Eklenen-Depremzedeler","a")
+            dosya43=open("Manuel-Eklenen-Depremzedeler.txt","a")
             dosya43.write("Kullanici adi:{} /n Sıra Numarası:{}".format(manuel_depremzede,i))
             j-=1
 
@@ -53,6 +53,11 @@ elif e==2:
                 continue
     print("Sozluk oluşturuldu \n {}".format(sozluk2))
     time.sleep(3)
+
+    bilgi=pd.read_csv("natural-disasters.csv")
+    bilgi_yeni=bilgi["Entity"].str.contains("Turkey")
+    print(bilgi[bilgi_yeni])
+
 
     a = int(input(
         "Lütfen yapmak istediğiniz default işlemi seçiniz: \n 1-Giriş Yap \n 2-Üye Ol \n 3- Şifremi Unuttum \n Cevabınız? :"))
