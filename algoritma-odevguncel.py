@@ -51,12 +51,16 @@ elif e==2:
                 print("Tekrar başlatılıyor.......")
                 time.sleep(2)
                 continue
+
     print("Sozluk oluşturuldu \n {}".format(sozluk2))
     time.sleep(3)
+    print(" Bilgilendirme için Türkiye genelinde deprem felaketinden etkilenen kişi sayısını aşağıda bulabilirsiniz..")
+    time.sleep(5)
+    bilgi=pd.read_csv("natural-disasters2.csv",delimiter=";")
 
-    bilgi=pd.read_csv("natural-disasters.csv")
-    bilgi_yeni=bilgi["Entity"].str.contains("Turkey")
-    print(bilgi[bilgi_yeni])
+    bilgi1=bilgi.loc[1470:1479,:]
+    bilgi1 = bilgi1.set_index("Year")
+    print(bilgi1)
 
 
     a = int(input(
