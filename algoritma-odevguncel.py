@@ -1,3 +1,9 @@
+"""
+
+github link: https://github.com/ezraike/Depremzede-Proje-Gorevi/blob/main/algoritma-odevguncel.py
+
+"""
+
 import tkinter as tk
 import time
 import pandas as pd
@@ -9,11 +15,12 @@ if e==1:
     while j>0:
         liste1=[1,2,3]
         for i in liste1:
+            j-=1
             manuel_depremzede=str(input("Lütfen Kayıt Olmayan bir depremzedenin adini girin:"))
             sozluk1={"Depremzede"[i]:manuel_depremzede}
             dosya43=open("Manuel-Eklenen-Depremzedeler.txt","a")
-            dosya43.write("Kullanici adi:{} /n Sıra Numarası:{}".format(manuel_depremzede,i))
-            j-=1
+            dosya43.write("Kullanici adi:{}  Sira Numarasi:{}\n".format(manuel_depremzede,i))
+            
 
 elif e==2:
     print("Kullanici paneline hoş geldiniz!")
@@ -113,10 +120,10 @@ elif e==2:
                     file45 = open("Yardim_Edilen_Miktar.txt", "a")
                     global b
                     b += int(entry2.get())
-                    file45.write("Yapilan Bağış Miktari {}".format(b))
+                    file45.write("Yapilan Bagis Miktari {}".format(b))
                     entry2.delete(0, "end")
                     entry68.delete(0,"end")
-                    girdi47 = tk.Label(app2, text="Yardımlarınız için minnettarız, Tekrardan Teşekkür Ederiz ! :)")
+                    girdi47 = tk.Label(app2, text="Yardımlarınız için minnettarız, Tekrardan Tesekkür Ederiz ! :)")
                     girdi47.pack()
 
                 girdi2 = tk.Label(app2, text="Yardım etmek istediğiniz miktarı sayı cinsinden yazin", bg="white",
@@ -201,7 +208,7 @@ elif e==2:
                     file45 = open("Yardim_Edilen_Miktar.txt", "a")
                     global b
                     b += int(entry2.get())
-                    file45.write("Yapilan Bağış Miktari {}".format(b))
+                    file45.write("Yapilan Bagis Miktari {}".format(b))
                     entry2.delete(0, "end")
                     entry68.delete(0, "end")
                     girdi47 = tk.Label(app2, text="Yardımlarınız için minnettarız, Tekrardan Teşekkür Ederiz ! :)")
@@ -290,7 +297,7 @@ elif e==2:
                     file45 = open("Yardim_Edilen_Miktar.txt", "a")
                     global b
                     b += int(entry2.get())
-                    file45.write("Yapilan Bağış Miktari {}".format(b))
+                    file45.write("Yapilan Bagis Miktari {}".format(b))
                     entry2.delete(0, "end")
                     entry68.delete(0, "end")
                     girdi47=tk.Label(app2,text="Yardımlarınız için minnettarız, Tekrardan Teşekkür Ederiz ! :)")
